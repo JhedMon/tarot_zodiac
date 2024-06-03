@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Chinese Zodiac</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+            background-color: #A402E3;
+        }
+
+        
+nav {
+background-color: #52009D ;
+overflow: hidden;
+border: 3px #52009D;
+margin: 20px auto;
+display: inline-block;
+}
+
+nav ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+nav ul li {
+flex: 1;
+}
+
+nav ul li a {
+display: block;
+color: white;
+text-align: center;
+padding: 1px 20px;
+text-decoration: none;
+border-right: 2px solid white;
+}
+
+nav ul li:last-child a {
+border-right: none;
+}
+
+nav ul li a:hover {
+background-color: #111;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px;
+}
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 20px; 
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container {
+            color: white;
+            padding: 20px;
+            background-color: royalblue;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-container h3 {
+            text-align: center;
+        }
+
+        .image-container center {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .image-container p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="zodiac.html">Western Zodiac</a></li>
+      <li><a href="chinesezodiac.html">Chinese Zodiac</a></li>
+      <li><a href="aboutzodiac.html">About Zodiac</a></li>
+      <li><a href="aboutwzodiac.html">About Western Zodiac</a></li>
+      <li><a href="aboutchzodiac.html">About Chinese Zodiac</a></li>
+    </ul>
+  </nav>
+  <h1>What is Western Zodiac?</h1>
+  <div class="grid-container">
+    <div class="container">
+     
+        <center><p>In Western astrology, astrological signs are the twelve 30-degree sectors that make up Earth's 360-degree orbit around the Sun. The signs enumerate from the first day of spring, known as the First Point of Aries, which is the vernal equinox.</p> <p>The astrological signs are <i>Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces.</i></p> <p>The Western zodiac originated in Babylonian astrology, and was later influenced by the Hellenistic culture. Each sign was named after a constellation the sun annually moved through while crossing the sky.</p> This observation is emphasized in the simplified and popular sun sign astrology. Over the centuries, Western astrology's zodiacal divisions have shifted out of alignment with the constellations they were named after by axial precession of the Earth while Hindu astrology measurements correct for this shifting.</p> <p> Astrology was developed in Chinese and Tibetan cultures as well but these astrologies are not based upon the zodiac but deal with the whole sky.</p> </center>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              var containers = document.querySelectorAll('.container');
+              
+              containers.forEach(function(container) {
+                container.addEventListener('mouseover', function() {
+                  this.style.backgroundColor = '#000000';
+                });
+                
+                container.addEventListener('mouseout', function() {
+                  this.style.backgroundColor = 'royalblue';
+                });
+              });
+            });
+          </script>
+        </script>
+        <footer>
+      </div>
+    </div>
+</body>
+</html>

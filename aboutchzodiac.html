@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Chinese Zodiac</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+            background-color: #F60C0C;
+        }
+
+        
+nav {
+background-color: #52009D ;
+overflow: hidden;
+border: 3px #52009D;
+margin: 20px auto;
+display: inline-block;
+}
+
+nav ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+nav ul li {
+flex: 1;
+}
+
+nav ul li a {
+display: block;
+color: white;
+text-align: center;
+padding: 1px 20px;
+text-decoration: none;
+border-right: 2px solid white;
+}
+
+nav ul li:last-child a {
+border-right: none;
+}
+
+nav ul li a:hover {
+background-color: #111;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px;
+}
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 20px; 
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container {
+            color: white;
+            padding: 20px;
+            background-color: #FC8E00;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-container h3 {
+            text-align: center;
+        }
+
+        .image-container center {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .image-container p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="zodiac.html">Western Zodiac</a></li>
+      <li><a href="chinesezodiac.html">Chinese Zodiac</a></li>
+      <li><a href="aboutzodiac.html">About Zodiac</a></li>
+      <li><a href="aboutwzodiac.html">About Western Zodiac</a></li>
+      <li><a href="aboutchzodiac.html">About Chinese Zodiac</a></li>
+    </ul>
+  </nav>
+  <h1>What is Chinese Zodiac?</h1>
+  <div class="grid-container">
+    <div class="container">
+     
+        <center><p>The Chinese zodiac is a repeating cycle of 12 years, with each year being represented by an animal and its reputed attributes.
+        </p> <p>In order, the 12 Chinese zodiac animals are <i>Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig.</i></p> <p>TThe general consensus is that the zodiacs originally had something to do with the worship of animals. A zodiac system has existed in Chinese culture since the Qin dynasty, more than 2,000 years ago.</p> Over time the zodiacs became more and more integrated into everyday life, with different meanings and characteristics being assigned to each animal..</p> <p>  This in turn gave rise to various compatibilities and incompatibilities between each zodiac.</p> </center>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              var containers = document.querySelectorAll('.container');
+              
+              containers.forEach(function(container) {
+                container.addEventListener('mouseover', function() {
+                  this.style.backgroundColor = '#000000';
+                });
+                
+                container.addEventListener('mouseout', function() {
+                  this.style.backgroundColor = '#FC8E00';
+                });
+              });
+            });
+          </script>
+        </script>
+        <footer>
+      </div>
+    </div>
+</body>
+</html>
