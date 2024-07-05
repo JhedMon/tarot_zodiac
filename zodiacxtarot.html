@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #008B8B;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2, h1 {
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #6200ea;
+            overflow: hidden;
+            border: 3px #52009D;
+            margin: 20px auto;
+            display: inline-block;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            flex: 1;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-right: 2px solid white;
+        }
+
+        nav ul li:last-child a {
+            border-right: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        header {
+            background-color: #301934;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 0.5rem 0;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .card img.card-image {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Tarot Cards</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutzodiac.html">Zodiac</a></li>
+            <li><a href="zodiacxtaort.html">Zodiac, Tarot</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="major-arcana">
+        <h2>Tarot cards associated with Zodiac</h2>
+        <div class="cards-container" id="major-cards"></div>
+    </section>
+</main>
+
+<script>
+    const majorArcana = [
+        { name: 'Aries: The Emperor', meaning: '(Loyal, Wise and Ambitious) Your Tarot card is The Emperor, the guy who will always be there when you need him. This card represents your sign of loyalty and ability to stick by your friends through thick and thin. Like the royal figure on your card, you use your authority and analytical powers to help others and to achieve your goals.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/RWS_Tarot_04_Emperor.jpg/800px-RWS_Tarot_04_Emperor.jpg' },
+        { name: 'Taurus: The Hierophant', meaning: '(Lead from Inner Knowledge) Your card, The Hierophant, represents learning from knowledgeable teachers who can help you search for higher truths by exploring tried and true traditions. Sifting through the superficial, these learned souls can lead you to the heart of matters where profound insights reveal important life lessons.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/RWS_Tarot_05_Hierophant.jpg/800px-RWS_Tarot_05_Hierophant.jpg' },
+        { name: 'Gemini: The Lovers', meaning: '(Dual Nature) Every Gemini is blessed with a dual nature represented by your Tarot card, The Lovers. Turning points for you often involve making a moral choice between taking the high or low road. This card encourages you to weigh your options carefully and follow the path dictated by your personal integrity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/RWS_Tarot_06_Lovers.jpg/800px-RWS_Tarot_06_Lovers.jpg' },
+        { name: 'Cancer: The Chariot', meaning: '(Mental powers help focus energy) You stand proud and strong as you guide The Chariot on your card, steering a steady course and rising above each life conflicts. Even though Cancers seek security, you also love the freedom of the open road where you can use your highly-developed intuition to win the race.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/RWS_Tarot_07_Chariot.jpg/800px-RWS_Tarot_07_Chariot.jpg' },
+        { name: 'Leo: Strength', meaning: '(Encourage, Ambition and Bravery) The Strength card represents your physical strength -- like that of the mighty Lion on your card -- as well as your emotional, mental and spiritual prowess. Like the Lion, you are blessed with plenty of courage, which helps you overcome problems and obstacles.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/RWS_Tarot_08_Strength.jpg/800px-RWS_Tarot_08_Strength.jpg' },
+        { name: 'Virgo: The Hermit', meaning: '(Inner wisdom) Like The Hermit, you often need to slow down and go within to focus on your purpose in life. The image on this card -- an old man -- represents a person who is weary of the outer world. When he retreats to explore the mysteries of his inner life, he becomes open and innocent like a child.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/RWS_Tarot_09_Hermit.jpg/800px-RWS_Tarot_09_Hermit.jpg' },
+        { name: 'Libra" Justice', meaning: '(Balanced nature) Justice holds the scales, asking you to weigh your desires against your needs. In order to reach a fair outcome, you must put your feelings and emotions aside. When you reach the light at the end of the tunnel of indecision, you will be able to serve the greater good.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/RWS_Tarot_11_Justice.jpg/800px-RWS_Tarot_11_Justice.jpg' },
+        { name: 'Scorpio: Death', meaning: '(Shed old identity, Express new one) Like your Tarot card, Death, you welcome transformation. You often shed your skin like a snake, seeking to release your spirit and be reborn. Because you are able to detach yourself from the ties that bind others, it is easy for you to change your identity, making you the mysterious person everyone wants to figure out.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/RWS_Tarot_13_Death.jpg/800px-RWS_Tarot_13_Death.jpg' },
+        { name: 'Sagittarius: Temperance', meaning: '(Gentleness) Like your card, Temperance, you are a gifted mediator, able to find common ground by balancing out judgments with genuine understanding and awareness. Like a steadily-meandering stream, you work your way through whatever difficulties get in the way.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/RWS_Tarot_14_Temperance.jpg/800px-RWS_Tarot_14_Temperance.jpg' },
+        { name: 'Capricorn The Devil', meaning: '(Empowered with Great Passion) The Devil card encourages you to face your shadow-self in order to gather the knowledge necessary for spiritual transformation. It advises you to reflect on any negativity that has made you doubt yourself, swap it for confidence and hold fast to your highest vision of who you are.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/RWS_Tarot_15_Devil.jpg/800px-RWS_Tarot_15_Devil.jpg' },
+        { name: 'Aquarius: The Star', meaning: '(Optimistic Nature) Your card, The Star, focuses on your optimism. When you wish on the stars, you really believe you can achieve your heart desires. Your job in this world is to convince others they can too, thereby helping to lead them home in a spiritual sense.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/RWS_Tarot_17_Star.jpg/800px-RWS_Tarot_17_Star.jpg' },
+        { name: 'Pisces: The Moon', meaning: '(Vast inner world, Spiritual) Like your Tarot card, The Moon, you are a creature of ever-changing moods. You do best when you attune to nature cycles and use them to refresh your intuitive powers. The Moon rules emotions, which are your strong suit, especially when you use your compassionate nature to help others.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/RWS_Tarot_18_Moon.jpg/800px-RWS_Tarot_18_Moon.jpg' },
+    ];
+
+    function createCard(card) {
+        const cardDiv = document.createElement('div');
+        cardDiv.classList.add('card');
+
+        const cardImage = document.createElement('img');
+        cardImage.src = card.image;
+        cardImage.alt = card.name;
+        cardImage.classList.add('card-image');
+
+        const cardTitle = document.createElement('h3');
+        cardTitle.textContent = card.name;
+
+        const cardMeaning = document.createElement('p');
+        cardMeaning.textContent = card.meaning;
+
+        cardDiv.appendChild(cardImage);
+        cardDiv.appendChild(cardTitle);
+        cardDiv.appendChild(cardMeaning);
+
+        return cardDiv;
+    }
+
+    function populateCards() {
+        const majorCardsContainer = document.getElementById('major-cards');
+
+        majorArcana.forEach(card => {
+            majorCardsContainer.appendChild(createCard(card));
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', populateCards);
+</script>
+</body>
+</html>
