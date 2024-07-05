@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Cards</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #A400B7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+h2{
+  color:white ;
+}
+        nav {
+background-color: #6200ea ;
+overflow: hidden;
+border: 3px #52009D;
+margin: 20px auto;
+display: inline-block;
+
+}
+h1{
+  color:white ;
+}
+nav ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+nav ul li {
+flex: 1;
+}
+
+nav ul li a {
+display: block;
+color: white;
+text-align: center;
+padding: 1px 20px;
+text-decoration: none;
+border-right: 2px solid white;
+}
+
+nav ul li:last-child a {
+border-right: none;
+}
+
+nav ul li a:hover {
+background-color: #111;
+}
+
+        header {
+            background-color: #6200ea;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        h1, h2, {
+            margin: 0.5rem 0;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 0.5rem 0;
+        }
+        
+
+        .card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .card img.card-image {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+      <h1>Tarot Cards</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html"> Home </a></li>
+          <li><a href="aboutzodiac.html">Zodiac</a></li>
+          <li><a><a href="zodiacxtaort.html"> Zodiac,Tarot</a></a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section id="major-arcana">
+        <h2>Major Arcana</h2>
+        <div class="cards-container" id="major-cards"></div>
+      </section>
+      <section id="minor-arcana">
+        <h2>Minor Arcana</h2>
+        <div id="wands">
+          <h3><i>Suit of Wands (Creativity)</i></h3>
+          <div class="cards-container" id="wands-cards"></div>
+        </div>
+        <div id="pentacles">
+          <h3><i>Suit of Pentacles (Finances)</i></h3>
+          <div class="cards-container" id="pentacles-cards"></div>
+        </div>
+        <div id="swords">
+          <h3>Suit of Swords (Challenges)< </h3>
+          <div class="cards-container" id="swords-cards"></div>
+        </div>
+        <div id="cups">
+          <h3>Suit of Cups (Emotions) </h3>
+          <div class="cards-container" id="cups-cards"></div>
+        </div>
+        
+            
+      </section>
+    </main>
+    <script>
+        const majorArcana = [
+            { name: '0 - The Fool', meaning: 'Upright: Folly, mania, extravagance, intoxication, delirium, frenzy, bewrayment. | Reversed: Negligence, absence, distribution, carelessness, apathy, nullity, vanity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/RWS_Tarot_00_Fool.jpg/220px-RWS_Tarot_00_Fool.jpg' },
+            { name: 'I - The Magician', meaning: 'Upright: Skill, diplomacy, address, subtlety; sickness, pain, loss, disaster, snares of enemies; self-confidence, will; the Querent, if male. | Reversed: Physician, Magus, mental disease, disgrace, disquiet.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/RWS_Tarot_01_Magician.jpg/220px-RWS_Tarot_01_Magician.jpg' },
+            { name: 'II - The High Priestess', meaning: 'Upright: Secrets, mystery, the future as yet unrevealed; the woman who interests the Querent, if male; the Querent herself, if female; silence, tenacity; mystery, wisdom, science. | Reversed: Passion, moral or physical ardour, conceit, surface knowledge. ', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/800px-RWS_Tarot_02_High_Priestess.jpg' },
+            { name: 'III - The Empress', meaning: 'Upright: Fruitfulness, action, initiative, length of days; the unknown, clandestine; also difficulty, doubt, ignorance. | Reversed: Light, truth, the unravelling of involved matters, public rejoicings; according to another reading, vacillation.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/RWS_Tarot_03_Empress.jpg/800px-RWS_Tarot_03_Empress.jpg' },
+            { name: 'IV - The Emperor', meaning: 'Stability, power, protection, realization; a great person; aid, reason, conviction; also authority and will. | Reversed: Benevolence, compassion, credit; also confusion to enemies, obstruction, immaturity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/RWS_Tarot_04_Emperor.jpg/800px-RWS_Tarot_04_Emperor.jpg' },
+            { name: 'V - The Hierophant', meaning: 'Upright: Marriage, alliance, captivity, servitude; by another account, mercy and goodness; inspiration; the man to whom the Querent has recourse. | Reversed: Society, good understanding, concord, overkindness, weakness.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/RWS_Tarot_05_Hierophant.jpg/800px-RWS_Tarot_05_Hierophant.jpg' },
+            { name: 'VI- The Lovers', meaning: 'Upright: Attraction, love, beauty, trials overcome. | Reversed: Failure, foolish designs. Another account speaks of marriage frustrated and contrarieties of all kinds.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/RWS_Tarot_06_Lovers.jpg/800px-RWS_Tarot_06_Lovers.jpg' },
+            { name: 'VII - The Chariot', meaning: 'Succour, providence also war, triumph, presumption, vengeance, trouble. | Reversed: Riot, quarrel, dispute, litigation, defeat.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/RWS_Tarot_07_Chariot.jpg/800px-RWS_Tarot_07_Chariot.jpg' },
+            { name: 'VIII - Strength', meaning: 'Upright: Power, energy, action, courage, magnanimity; also complete success and honours. | Reversed: Despotism, abuse if power, weakness, discord, sometimes even disgrace.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/RWS_Tarot_08_Strength.jpg/800px-RWS_Tarot_08_Strength.jpg' },
+            { name: 'IX - The Hermit', meaning: 'Upright: Prudence, circumspection; also and especially treason, dissimulation, roguery, corruption. | Reversed: Concealment, disguise, policy, fear, unreasoned caution.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/RWS_Tarot_09_Hermit.jpg/800px-RWS_Tarot_09_Hermit.jpg' },
+            { name: 'X - Wheel of Fortune', meaning: 'Upright: Destiny, fortune, success, elevation, luck, felicity. | Reversed: Increase, abundance, superfluity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg/320px-RWS_Tarot_10_Wheel_of_Fortune.jpg' },
+            { name: 'XI - Justice', meaning: 'Upright: Equity, rightness, probity, executive; triumph of the deserving side in law. |  Reversed: Law in all its departments, legal complications, bigotry, bias, excessive severity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/RWS_Tarot_11_Justice.jpg/800px-RWS_Tarot_11_Justice.jpg' },
+            { name: 'XII - The Hanged Man', meaning: 'Upright: Wisdom, circumspection, discernment, trials, sacrifice, intuition, divination, prophecy. | Reversed: Selfishness, the crowd, body politic.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/RWS_Tarot_12_Hanged_Man.jpg/320px-RWS_Tarot_12_Hanged_Man.jpg' },
+            { name: 'XIII - Death', meaning: 'Upright: End, mortality, destruction, corruption also, for a man, the loss of a benefactor for a woman, many contrarieties; for a maid, failure of marriage projects. |  d: Inertia, sleep, lethargy, petrifaction, somnambulism; hope destroyed.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/RWS_Tarot_13_Death.jpg/800px-RWS_Tarot_13_Death.jpg' },
+            { name: 'XIV - Temperance', meaning: 'Upright: Economy, moderation, frugality, management, accommodation. | Reversed: Things connected with churches, religions, sects, the priesthood, sometimes even the priest who will marry the Querent; also disunion, unfortunate combinations, competing interests.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/RWS_Tarot_14_Temperance.jpg/320px-RWS_Tarot_14_Temperance.jpg' },
+            { name: 'XV -  The Devil', meaning: 'Upright: Ravage, violence, vehemence, extraordinary efforts, force, fatality; that which is predestined but is not for this reason evil. | Reversed: Evil fatality, weakness, pettiness, blindness.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/RWS_Tarot_15_Devil.jpg/320px-RWS_Tarot_15_Devil.jpg' },
+            { name: 'XVI - The Tower', meaning: 'Upright: Misery, distress, indigence, adversity, calamity, disgrace, deception, ruin. It is a card in particular of unforeseen catastrophe. | Reversed: According to one account, the same in a lesser degree also oppression, imprisonment, tyranny.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/RWS_Tarot_16_Tower.jpg/800px-RWS_Tarot_16_Tower.jpg' },
+            { name: 'XVII - The Star', meaning: 'Upright: Hope and bright prospects | Reversed:  Loss, theft, privation, abandonment; another reading says: arrogance, haughtiness, impotence. ', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/RWS_Tarot_17_Star.jpg/800px-RWS_Tarot_17_Star.jpg' },
+            { name: 'XVIII - The Moon', meaning: 'Upright: Hidden enemies, danger, calumny, darkness, terror, deception, occult forces, error.| Reversed: Instability, inconstancy, silence, lesser degrees of deception and error.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/RWS_Tarot_18_Moon.jpg/800px-RWS_Tarot_18_Moon.jpg' },
+            { name: 'XIX - The Sun', meaning: 'Upright: Material happiness, fortunate marriage, contentment. | Reversed: The same in a lesser sense. ', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/RWS_Tarot_19_Sun.jpg/800px-RWS_Tarot_19_Sun.jpg' },
+            { name: 'XX - Judgement', meaning: 'Upright: Change of position, renewal, outcome. Another account specifies total loss though lawsuit.| Reversed: Weakness, pusillanimity, simplicity; also deliberation, decision, sentence.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/RWS_Tarot_20_Judgement.jpg/800px-RWS_Tarot_20_Judgement.jpg' },
+            { name: 'XXI - The World', meaning: 'Upright: Assured success, recompense, voyage, route, emigration, flight, change of place. | Reversed: Inertia, fixity, stagnation, permanence.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/RWS_Tarot_21_World.jpg/800px-RWS_Tarot_21_World.jpg' },
+
+            
+        ];
+
+        const minorArcana = {
+          wands: [
+            { name: 'Ace of Wands', meaning: 'Upright: Creation, invention, enterprise, the powers which result in these; principle, beginning, source; birth, family, origin, and in a sense the virility which is behind them; the starting point of enterprises; according to another account, money, fortune, inheritance. | Reversed: Fall, decadence, ruin, perdition, to perish also a certain clouded joy.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Wands01.jpg/320px-Wands01.jpg' },
+            { name: 'Two of Wands', meaning: 'Upright: Between the alternative readings there is no marriage possible; on the one hand, riches, fortune, magnificence; on the other, physical suffering, disease, chagrin, sadness, mortification. The design gives one suggestion | Reversed: Surprise, wonder, enchantment, emotion, trouble, fear.' , image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Wands02.jpg/800px-Wands02.jpg' },            
+            { name: 'Three of Wands', meaning: 'Upright:  He symbolizes established strength, enterprise, effort, trade, commerce, discovery; those are his ships, bearing his merchandise, which are sailing over the sea. The card also signifies able co-operation in business, as if the successful merchant prince were looking from his side towards yours with a view to help you. | Reversed: The end of troubles, suspension or cessation of adversity, toil and disappointment.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wands03.jpg/320px-Wands03.jpg' },  
+            { name: 'Four of Wands', meaning: 'Upright: They are for once almost on the surface — country life, haven of refuge, a species of domestic harvest-home, repose, concord, harmony, prosperity, peace, and the perfected work of these. | Reversed: The meaning remains unaltered; it is prosperity, increase, felicity, beauty, embellishment.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Wands04.jpg/800px-Wands04.jpg' },  
+            { name: 'Five of Wands', meaning: 'Upright: Imitation, as, for example, sham fight, but also the strenuous competition and struggle of the search after riches and fortune. In this sense it connects with the battle of life. Hence some attributions say that it is a card of gold, gain, opulence. | Reversed: Litigation, disputes, trickery, contradiction.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Wands05.jpg/800px-Wands05.jpg' },  
+            { name: 'Six of Wands', meaning: 'Upright: The card has been so designed that it can cover several significations; on the surface, it is a victor triumphing, but it is also great news | Reversed: Apprehension, fear, as of a victorious enemy at the gate; treachery, disloyalty, as of gates being opened to the enemy; also indefinite delay.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Wands06.jpg/800px-Wands06.jpg' },  
+            { name: 'Seven of Wands', meaning: 'Upright: It is a card of valour, for, on the surface, six are attacking one, who has, however, the vantage position. | Reversed: Perplexity, embarrassments, anxiety. It is also a caution against indecision.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Wands07.jpg/800px-Wands07.jpg' },  
+            { name: 'Eight of Wands', meaning: 'Upright: Activity in undertakings, the path of such activity, swiftness, as that of an express messenger; great haste, great hope, speed towards an end which promises assured felicity | Reversed: Arrows of jealousy, internal dispute, stingings of conscience, quarrels; and domestic disputes for persons who are married.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Wands08.jpg/800px-Wands08.jpg' },  
+            { name: 'Nine of Wands', meaning: 'Upright: The card signifies strength in opposition. If attacked, the person will meet an onslaught boldly; and his build shews, that he may prove a formidable antagonist. With this main significance there are all its possible adjuncts — delay, suspension, adjournment. | Reversed: Obstacles, adversity, calamity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tarot_Nine_of_Wands.jpg/800px-Tarot_Nine_of_Wands.jpg' },  
+            { name: 'Ten of Wands', meaning: 'Upright: A card of many significances, and some of the readings cannot be harmonized. I set aside that which connects it with honour and good faith. The chief meaning is oppression simply, but it is also fortune, gain, any kind of success, and then it is the oppression of these things. It is also a card of false-seeming, disguise, perfidy. The place which the figure is approaching may suffer from the rods that he carries. | Reversed: Contrarieties, difficulties, intrigues, and their analogies.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Wands10.jpg/320px-Wands10.jpg' },  
+            { name: 'Page of Wands', meaning: 'Upright: Dark young man, faithful, a lover, an envoy, a postman. Beside a man, he will bear favourable testimony concerning him. A dangerous rival, if followed by the Page of Cups. Has the chief qualities of his suit. He may signify family intelligence. | Reversed: Anecdotes, announcements, evil news. Also indecision and the instability which accompanies it.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Wands11.jpg/800px-Wands11.jpg' },  
+            { name: 'Knight of Wands', meaning: 'Upright: Departure, absence, flight, emigration. A dark young man, friendly. Change of residence | Reversed: Rupture, division, interruption, discord.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Wands12.jpg/800px-Wands12.jpg' },  
+            { name: 'Queen of Wands', meaning: 'Upright: A dark woman, countrywoman, friendly, chaste, loving, honourable. If the card beside her signifies a man, she is well disposed towards him; if a woman, she is interested in the Querent. Also, love of money, or a certain success in business. | Reversed: Good, economical, obliging, serviceable. Signifies also — but in certain positions and in the neighbourhood of other cards tending in such directions — opposition, jealousy, even deceit and infidelity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Wands13.jpg/800px-Wands13.jpg' },  
+            { name: 'King of Wands', meaning: 'Upright: Dark man, friendly, countryman, generally married, honest and conscientious. The card always signifies honesty, and may mean news concerning an unexpected heritage to fall in before very long. | Reversed: Good, but severe; austere, yet tolerant.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Wands14.jpg/320px-Wands14.jpg' },  
+                    ],
+          pentacles: [
+            { name: 'Ace of Pentacles', meaning: 'Upright: Perfect contentment, felicity, ecstasy; also speedy intelligence; gold.| Reversed: The evil side of wealth, bad intelligence; also great riches. In any case it shews prosperity, comfortable material conditions, but whether these are of advantage to the possessor will depend on whether the card is reversed or not.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Pents01.jpg/800px-Pents01.jpg' },
+            { name: 'Two of Pentacles', meaning: 'Upright:  On the one hand it is represented as a card of gaiety, recreation and its connexions, which is the subject of the design; but it is read also as news and messages in writing, as obstacles, agitation, trouble, embroilment.| Reversed: Enforced gaiety, simulated enjoyment, literal sense, handwriting, composition, letters of exchange.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Pents02.jpg/800px-Pents02.jpg' },  
+            { name: 'Three of Pentacles', meaning: 'Upright: Metier, trade, skilled labour; usually, however, regarded as a card of nobility, aristocracy, renown, glory. | Reversed: Mediocrity, in work and otherwise, puerility, pettiness, weakness.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pents03.jpg/800px-Pents03.jpg' },  
+            { name: 'Four of Pentacles', meaning: 'Upright: The surety of possessions, cleaving to that which one has, gift, legacy, inheritance | Reversed: Suspense, delay, opposition.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Pents04.jpg/800px-Pents04.jpg' },  
+            { name: 'Five of Pentacles', meaning: 'Upright: The card foretells material trouble above all, whether in the form illustrated — that is, destitution — or otherwise. For some cartomancists, it is a card of love and lovers-wife, husband, friend, mistress; also concordance, affinities. These alternatives cannot be harmonized. | Reversed: Disorder, chaos, ruin, discord, profligacy.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Pents05.jpg/800px-Pents05.jpg' },  
+            { name: 'Six of Pentacles', meaning: 'Upright: Presents, gifts, gratification another account says attention, vigilance now is the accepted time, present prosperity, etc.| Reversed: Desire, cupidity, envy, jealousy, illusion', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pents06.jpg/800px-Pents06.jpg' },  
+            { name: 'Seven of Pentacles', meaning: 'Upright: These are exceedingly contradictory; in the main, it is a card of money, business, barter; but one reading gives altercation, quarrels — and another innocence, ingenuity, purgation. | Reversed: Cause for anxiety regarding money which it may be proposed to lend.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Pents07.jpg/800px-Pents07.jpg' },  
+            { name: 'Eight of Pentacles', meaning: 'Upright:  Work, employment, commission, craftsmanship, skill in craft and business, perhaps in the preparatory stage.| Reversed: Voided ambition, vanity, cupidity, exaction, usury. It may also signify the possession of skill, in the sense of the ingenious mind turned to cunning and intrigue.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pents08.jpg/800px-Pents08.jpg' },  
+            { name: 'Nine of Pentacles', meaning: 'Upright: Prudence, safety, success, accomplishment, certitude, discernment. | Reversed: Roguery, deception, voided project, bad faith.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Pents09.jpg/800px-Pents09.jpg' },  
+            { name: 'Ten of Pentacles', meaning: 'Upright: Gain, riches; family matters, archives, extraction, the abode of a family. | Reversed: Chance, fatality, loss, robbery, games of hazard; sometimes gift, dowry, pension.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pents10.jpg/800px-Pents10.jpg' },  
+            { name: 'Page of Pentacles', meaning: 'Upright: Application, study, scholarship, reflection another reading says news, messages and the bringer thereof; also rule, management. | Reversed: Prodigality, dissipation, liberality, luxury; unfavourable news.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pents11.jpg/800px-Pents11.jpg' },  
+            { name: 'Knight of Pentacles', meaning: 'Upright: Utility, serviceableness, interest, responsibility, rectitude-all on the normal and external plane. | Reversed: inertia, idleness, repose of that kind, stagnation; also placidity, discouragement, carelessness.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Pents12.jpg/800px-Pents12.jpg' }, 
+            { name: 'Queen of Pentacles', meaning: 'Upright: Opulence, generosity, magnificence, security, liberty. | Reversed: Evil, suspicion, suspense, fear, mistrust.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Pents13.jpg/800px-Pents13.jpg' },  
+            {name: 'King of Pentacles', meaning: 'Upright: Valour, realizing intelligence, business and normal intellectual aptitude, sometimes mathematical gifts and attainments of this kind; success in these paths. | Reversed: Vice, weakness, ugliness, perversity, corruption, peril.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pents14.jpg/800px-Pents14.jpg'}, 
+                    ],
+          swords: [
+            { name: 'Ace of Swords', meaning: 'Upright: Triumph, the excessive degree in everything, conquest, triumph of force. It is a card of great force, in love as well as in hatred. The crown may carry a much higher significance than comes usually within the sphere of fortune-telling. | Reversed: The same, but the results are disastrous; another account says — conception, childbirth, augmentation, multiplicity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Swords01.jpg/800px-Swords01.jpg' },
+            { name: 'Two of Swords', meaning: 'Upright: Conformity and the equipoise which it suggests, courage, friendship, concord in a state of arms; another reading gives tenderness, affection, intimacy. The suggestion of harmony and other favourable readings must be considered in a qualified manner, as Swords generally are not symbolical of beneficent forces in human affairs. | Reversed: Imposture, falsehood, duplicity, disloyalty.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Swords02.jpg/800px-Swords02.jpg' },  
+            { name: 'Three of Swords', meaning: 'Upright: Removal, absence, delay, division, rupture, dispersion, and all that the design signifies naturally, being too simple and obvious to call for specific enumeration. | Reversed: Mental alienation, error, loss, distraction, disorder, confusion.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Swords03.jpg/320px-Swords03.jpg' },  
+            { name: 'Four of Swords', meaning: 'Upright: Vigilance, retreat, solitude, hermit response, exile, tomb and coffin. It is these last that have suggested the design. | Reversed: Wise administration, circumspection, economy, avarice, precaution, testament.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Swords04.jpg/800px-Swords04.jpg' },  
+            { name: 'Five of Swords', meaning: 'Upright: Degradation, destruction, revocation, infamy, dishonour, loss, with the variants and analogues of these | Reversed: The same; burial and obsequies.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Swords05.jpg/800px-Swords05.jpg' },  
+            { name: 'Six of Swords', meaning: 'Upright: journey by water, route, way, envoy, commissionary, expedient. | Reversed: Declaration, confession, publicity; one account says that it is a proposal of love.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Swords06.jpg/800px-Swords06.jpg' },  
+            { name: 'Seven of Swords', meaning: 'Upright: Design, attempt, wish, hope, confidence; also quarrelling, a plan that may fail, annoyance. The design is uncertain in its import, because the significations are widely at variance with each other. | Reversed: Good advice, counsel, instruction, slander, babbling.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Swords07.jpg/800px-Swords07.jpg' },  
+            { name: 'Eight of Swords', meaning: 'Upright: Bad news, violent chagrin, crisis, censure, power in trammels, conflict, calumny; also sickness.  | Reversed: Disquiet, difficulty, opposition, accident, treachery; what is unforeseen; fatality.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Swords08.jpg/800px-Swords08.jpg' },  
+            { name: 'Nine of Swords', meaning: 'Upright: Death, failure, miscarriage, delay, deception, disappointment, despair. | Reversed: Imprisonment, suspicion, doubt, reasonable fear, shame.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Swords09.jpg/800px-Swords09.jpg' },  
+            { name: 'Ten of Swords', meaning: 'Upright: Whatsoever is intimated by the design; also pain, affliction, tears, sadness, desolation. It is not especially a card of violent death. | Reversed: Advantage, profit, success, favour, but none of these are permanent; also power and authority', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Swords10.jpg/800px-Swords10.jpg' },  
+            { name: 'Page of Swords', meaning: 'Upright: Authority, overseeing, secret service, vigilance, spying, examination, and the qualities thereto belonging. | Reversed: More evil side of these qualities; what is unforeseen, unprepared state; sickness is also intimated.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Swords11.jpg/800px-Swords11.jpg' },  
+            { name: 'Knight of Swords', meaning: 'Upright: Skill, bravery, capacity, defence, address, enmity, wrath, war, destruction, opposition, resistance, ruin. There is therefore a sense in which the card signifies death, but it carries this meaning only in its proximity to other cards of fatality. | Reversed: ', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Swords12.jpg/800px-Swords12.jpg' }, 
+            { name: 'Queen of Swords', meaning: 'Upright:  Widowhood, female sadness and embarrassment, absence, sterility, mourning, privation, separation.| Reversed: Malice, bigotry, artifice, prudery, bale, deceit.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Swords13.jpg/320px-Swords13.jpg' },  
+            {name: 'King of Swords', meaning: 'Upright: Whatsoever arises out of the idea of judgment and all its connexions-power, command, authority, militant intelligence, law, offices of the crown, and so forth. | Reversed: Cruelty, perversity, barbarity, perfidy, evil intention.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Swords14.jpg/800px-Swords14.jpg'}, 
+                    ],
+          cups: [
+            { name: 'Ace of Cups', meaning: 'Upright: House of the true heart, joy, content, abode, nourishment, abundance, fertility; Holy Table, felicity hereof. | Reversed: House of the false heart, mutation, instability, revolution.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Cups01.jpg/800px-Cups01.jpg' },
+           { name: 'Two of Cups', meaning: 'Upright: Love, passion, friendship, affinity, union, concord, sympathy, the interrelation of the sexes, and — as a suggestion apart from all offices of divination — that desire which is not in Nature, but by which Nature is sanctified. | Reversed: Favourable in things of pleasure and business, as well as love; also wealth and honour.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Cups02.jpg/800px-Cups02.jpg' },  
+            { name: 'Three of Cups', meaning: 'Upright: The conclusion of any matter in plenty, perfection and merriment; happy issue, victory, fulfilment, solace, healing. | Reversed: Expedition, dispatch, achievement, end. It signifies also the side of excess in physical enjoyment, and the pleasures of the senses.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Cups03.jpg/800px-Cups03.jpg' },  
+            { name: 'Four of Cups', meaning: 'Upright: Weariness, disgust, aversion, imaginary vexations, as if the wine of this world had caused satiety only; another wine, as if a fairy gift, is now offered the wastrel, but he sees no consolation therein. This is also a card of blended pleasure. | Reversed: Novelty, presage, new instruction, new relations.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Cups04.jpg/800px-Cups04.jpg' },  
+            { name: 'Five of Cups ', meaning: 'Upright: It is a card of loss, but something remains over; three have been taken, but two are left; it is a card of inheritance, patrimony, transmission, but not corresponding to expectations; with some interpreters it is a card of marriage, but not without bitterness or frustration. | Reversed: News, alliances, affinity, consanguinity, ancestry, return, false projects.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cups05.jpg/800px-Cups05.jpg' },  
+            { name: 'Six of Cups', meaning: 'Upright: A card of the past and of memories, looking back, as — for example — on childhood; happiness, enjoyment, but coming rather from the past; things that have vanished. Another reading reverses this, giving new relations, new knowledge, new environment, and then the children are disporting in an unfamiliar precinct. | Reversed: The future, renewal, that which will come to pass presently.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Cups06.jpg/800px-Cups06.jpg' },  
+            { name: 'Seven of Cups', meaning: 'Upright: Fairy favours, images of reflection, sentiment, imagination, things seen in the glass of contemplation; some attainment in these degrees, but nothing permanent or substantial is suggested. | Reversed: Desire, will, determination, project.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Cups07.jpg/800px-Cups07.jpg' },  
+            { name: 'Eight of Cups', meaning: 'Upright: The card speaks for itself on the surface, but other readings are entirely antithetical — giving joy, mildness, timidity, honour, modesty. In practice, it is usually found that the card shews the decline of a matter, or that a matter which has been thought to be important is really of slight consequence — either for good or evil. | Reversed: Great joy, happiness, feasting.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cups08.jpg/800px-Cups08.jpg' },  
+            { name: 'Nine of Cups', meaning: 'Upright: Concord, contentment, physical bien-etre; also victory, success, advantage; satisfaction for the Querent or person for whom the consultation is made. | Reversed: Truth, loyalty, liberty; but the readings vary and include mistakes, imperfections, etc.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Cups09.jpg/800px-Cups09.jpg' },  
+            { name: 'Ten of Cups', meaning: 'Upright: Contentment, repose of the entire heart; the perfection of that state; also perfection of human love and friendship; if with several picture-cards, a person who is taking charge of the Querent interests; also the town, village or country inhabited by the Querent. | Reversed: Repose of the false heart, indignation, violence.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Cups10.jpg/800px-Cups10.jpg' },  
+            { name: 'Page of Cups', meaning: 'Upright: Fair young man, one impelled to render service and with whom the Querent will be connected; a studious youth; news, message; application, reflection, meditation; also these things directed to business. | Reversed: Taste, inclination, attachment, seduction, deception, artifice.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Cups11.jpg/800px-Cups11.jpg' },  
+            { name: 'Knight of Cups', meaning: 'Upright: Arrival, approach — sometimes that of a messenger; advances, proposition, demeanour, invitation, incitement. | Reversed: Trickery, artifice, subtlety, swindling, duplicity, fraud.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Cups12.jpg/800px-Cups12.jpg' }, 
+            { name: 'Queen of Cups', meaning: 'Upright: Trickery, artifice, subtlety, swindling, duplicity, fraud. | Reversed: The accounts vary; good woman; otherwise, distinguished woman but one not to be trusted; perverse woman; vice, dishonour, depravity.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Cups13.jpg/800px-Cups13.jpg' },  
+            {name: 'King of Cups', meaning: 'Upright: Fair man, man of business, law, or divinity; responsible, disposed to oblige the Querent; also equity, art and science, including those who profess science, law and art; creative intelligence. | Reversed: Dishonest, double-dealing man; roguery, exaction, injustice, vice, scandal, pillage, considerable loss.', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cups14.jpg/800px-Cups14.jpg'}, , 
+                    ]
+        };
+        
+        
+
+        function createCard(card) {
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('card');
+            
+            const cardImage = document.createElement('img');
+            cardImage.src = card.image;
+            cardImage.alt = card.name;
+            cardImage.classList.add('card-image');
+            
+            const cardTitle = document.createElement('h3');
+            cardTitle.textContent = card.name;
+            
+            const cardMeaning = document.createElement('p');
+            cardMeaning.textContent = card.meaning;
+            
+            cardDiv.appendChild(cardImage);
+            cardDiv.appendChild(cardTitle);
+            cardDiv.appendChild(cardMeaning);
+            
+            return cardDiv;
+        }
+
+        function populateCards() {
+            const majorCardsContainer = document.getElementById('major-cards');
+            const wandsCardsContainer = document.getElementById('wands-cards');
+            const pentaclesCardsContainer = document.getElementById('pentacles-cards');
+            const swordsCardsContainer = document.getElementById('swords-cards');
+            const cupsCardsContainer = document.getElementById('cups-cards');
+            
+            majorArcana.forEach(card => {
+                majorCardsContainer.appendChild(createCard(card));
+            });
+            
+            minorArcana.wands.forEach(card => {
+                wandsCardsContainer.appendChild(createCard(card));
+            });
+            
+            minorArcana.pentacles.forEach(card => {
+                pentaclesCardsContainer.appendChild(createCard(card));
+            });
+            
+            minorArcana.swords.forEach(card => {
+                swordsCardsContainer.appendChild(createCard(card));
+            });
+            
+            minorArcana.cups.forEach(card => {
+                cupsCardsContainer.appendChild(createCard(card));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', populateCards);
+    </script>
+    <footer><center><p><i><b><h4>Based on  A.E. Waite's 1910 book The Pictorial Key to the Tarot</h4></b></i></p></center> </footer>
+</body>
+</html>
