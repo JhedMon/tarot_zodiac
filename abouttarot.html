@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Chinese Zodiac</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+            background-color: #008B8B;
+        }
+h1{
+  color:white;
+}
+        
+nav {
+background-color: #52009D ;
+overflow: hidden;
+border: 3px #52009D;
+margin: 20px auto;
+display: inline-block;
+}
+
+nav ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+nav ul li {
+flex: 1;
+}
+
+nav ul li a {
+display: block;
+color: white;
+text-align: center;
+padding: 1px 20px;
+text-decoration: none;
+border-right: 2px;
+}
+
+nav ul li:last-child a {
+border-right: none;
+}
+
+nav ul li a:hover {
+background-color: #111;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px;
+}
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 20px; 
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container {
+            color: white;
+            padding: 20px;
+            background-color: #6200ea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-container h3 {
+            text-align: center;
+        }
+
+        .image-container center {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .image-container p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="tarot.html">Tarot</a></li>
+      <li><a href="abouttarot.html">About Tarot</a></li>
+      <li><a href="zodiacxtarot.html">Tarot card link to zodiac signs</a></li>
+      <li><a href="aboutzodiac.html">Portal to Zodiac</a></li>
+    </ul>
+  </nav>
+  <h1>What is Tarot?</h1>
+  <div class="grid-container">
+    <div class="container">
+     
+        <center><i>Tarot cards </i> are a deck of cards used for divination, spiritual guidance, and personal reflection. Originating in the 15th century as a card game, tarot evolved into a tool for esoteric purposes by the late 18th century. A standard tarot deck consists of 78 cards divided into two main parts: the <b>Major Arcana</b>, comprising 22 cards that depict significant life events and spiritual lessons, and the <b>Minor Arcana </b>, consisting of 56 cards that address everyday situations and personal interactions. Each card has its own symbolism and meanings, which are interpreted by readers to provide insights and guidance.</p>
+          
+        </p> <b>The Rider-Waite Tarot</b>, also known as <b><i>the Rider-Waite-Smith Tarot</i></b>, is one of the most popular and widely used tarot decks. Created in 1909 by artist <b>Pamela Colman Smith </b>under the direction of mystic and scholar <b>Arthur Edward Waite</b>, it was published by the Rider Company. This deck is renowned for its detailed, symbolic imagery, which has set a standard for many subsequent tarot decks. The Major Arcana cards in the Rider-Waite Tarot depict archetypal figures and themes, while the Minor Arcana cards are richly illustrated with scenes that convey their meanings more clearly than earlier, simpler designs. The Rider-Waite Tarot remains a foundational tool for both beginners and experienced tarot readers.</p>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var containers = document.querySelectorAll('.container');
+        
+            containers.forEach(function(container) {
+              container.addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#000000';
+              });
+        
+              container.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '#6200ea';
+              });
+            });
+          });
+        </script>
+        <footer>
+      </div>
+    </div>
+</body>
+</html>
